@@ -8,7 +8,14 @@ I'm definitely not a Java person, but being able to interface your Arduino with 
 
 ## Installation/Setup
 
-The [official instructions](http://arduino.cc/playground/Interfacing/Java) say that if you've installed the IDE, you don't have to set anything else up. I couldn't get that to work, so I went the manual route. Note that the serial port has been changed to work with my board and that yours may be different.
+If you've installed the IDE, all you have to do is compile and run the example:
+
+```bash
+javac -classpath /Applications/Arduino.app/Contents/Resources/Java/RXTXcomm.jar:. SerialTest.java
+java -Djava.library.path=. -cp /Applications/Arduino.app/Contents/Resources/Java/RXTXcomm.jar:. SerialTest
+```
+
+If you've installed RXTX manually or separately, run these steps:
 
 First, set up the RXTX library:
 
@@ -26,6 +33,8 @@ Then compile and run the example:
 javac SerialTest.java
 java SerialTest
 ```
+
+Note that the serial port has been changed to work with my board and that yours may be different.
 
 ## License
 
